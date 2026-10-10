@@ -67,7 +67,7 @@ export default function StatsSection() {
           />
         )
       )}
-      <div ref={ref} className="relative mx-auto max-w-[1180px] px-6">
+      <div ref={ref} className="relative mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading dark eyebrow="Results — Sample Data" title="Results That Speak (Sample Data)" />
         <div className="mt-11 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
           {STATS.map((s, i) => (
@@ -78,7 +78,7 @@ export default function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
               whileHover={reduce ? {} : { scale: 1.04, borderColor: "#FF6F00" }}
-              className="rounded-card border border-white/15 bg-white/[0.08] p-8 backdrop-blur-md"
+              className="rounded-card border border-white/15 bg-white/[0.08] p-5 backdrop-blur-md sm:p-8"
             >
               <div className="font-poppins text-[clamp(1.8rem,4vw,2.6rem)] font-extrabold text-accentSoft">
                 {inView ? (

@@ -83,10 +83,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="scroll-mt-24 bg-bg py-[clamp(48px,8vw,96px)]">
-      <div className="mx-auto max-w-[1180px] px-6">
+    <section id="contact" className="scroll-mt-24 bg-bg py-[clamp(40px,8vw,96px)]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading eyebrow="Get In Touch" title="Book Your Free Demo Class" subtitle="Fill the form — we'll call you within 24 hours. (Demo form, no backend.)" />
-        <div className="mt-11 grid items-start gap-8 lg:grid-cols-2">
+        <div className="mt-8 grid items-start gap-6 sm:mt-11 sm:gap-8 lg:grid-cols-2">
           <motion.div initial={reduce ? {} : { opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-[18px]">
             <div className="rounded-card bg-white p-7 shadow-soft">
               <h3 className="flex items-center gap-2 font-poppins text-lg font-bold"><MapPin className="text-accent" /> Visit Us</h3>
@@ -97,7 +97,7 @@ export default function ContactSection() {
                 onClick={wa}
                 animate={reduce ? {} : { scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-bold text-white hover:bg-[#1DA851]"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 font-bold text-white hover:bg-[#1DA851] sm:w-auto"
               >
                 <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
               </motion.button>
@@ -109,7 +109,7 @@ export default function ContactSection() {
               transition={{ duration: 0.6 }}
               className="overflow-hidden rounded-card shadow-soft"
             >
-              <iframe title="Map placeholder — Chennai, Anna Nagar" loading="lazy" className="block h-[220px] w-full border-0" src="https://www.google.com/maps?q=Anna+Nagar+East+Chennai&output=embed" />
+              <iframe title="Map placeholder — Chennai, Anna Nagar" loading="lazy" className="block h-[180px] w-full border-0 sm:h-[220px]" src="https://www.google.com/maps?q=Anna+Nagar+East+Chennai&output=embed" />
             </motion.div>
           </motion.div>
 
@@ -119,7 +119,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-card border-2 border-gray-200 bg-white p-7 shadow-lift md:p-8"
+            className="rounded-card border-2 border-gray-200 bg-white p-5 shadow-lift sm:p-7 md:p-8"
           >
             <h3 className="font-poppins text-xl font-bold">Enquiry Form</h3>
             <p className="mb-5 text-sm text-muted">All sample data — nothing is sent anywhere.</p>

@@ -107,7 +107,7 @@ export default function HeroSection() {
   const artY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 220]);
 
   return (
-    <section ref={ref} id="home" className="hero-mesh relative flex min-h-screen items-center overflow-hidden pb-20 pt-32 text-white">
+    <section ref={ref} id="home" className="hero-mesh relative flex min-h-screen items-center overflow-hidden pb-16 pt-28 text-white sm:pb-20 sm:pt-32">
       {!reduce && (
         <>
           <motion.div aria-hidden className="absolute -right-20 -top-28 h-[420px] w-[420px] rounded-full bg-indigo-400 opacity-50 blur-[70px]"
@@ -121,7 +121,7 @@ export default function HeroSection() {
 
       <div className="relative z-[2] mx-auto grid w-full max-w-[1180px] items-center gap-12 px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div variants={reduce ? {} : container} initial="hidden" animate="show" style={{ y: textY }}>
-          <motion.span variants={reduce ? {} : item} className="mb-4 inline-block rounded-full border border-accent/40 bg-accent/20 px-[18px] py-2 font-grotesk text-xs font-semibold uppercase tracking-[2px] text-accentSoft">
+          <motion.span variants={reduce ? {} : item} className="mb-4 inline-block rounded-full border border-accent/40 bg-accent/20 px-[14px] py-1.5 font-grotesk text-[0.72rem] font-semibold uppercase tracking-[1.5px] text-accentSoft sm:px-[18px] sm:py-2 sm:text-xs sm:tracking-[2px]">
             📍 Chennai&apos;s #1 Coaching for Class 10–12
           </motion.span>
           <motion.h1 variants={reduce ? {} : item} className="font-poppins text-[clamp(2rem,5.5vw,3.6rem)] font-bold leading-tight">
@@ -134,9 +134,9 @@ export default function HeroSection() {
           <motion.p variants={reduce ? {} : item} className="mt-5 max-w-[520px] text-[clamp(1rem,2.2vw,1.2rem)] text-indigo-200">
             Expert NEET &amp; JEE foundation batches. Small batches. Big results. First demo class — absolutely <strong className="text-white">FREE</strong>.
           </motion.p>
-          <motion.div variants={reduce ? {} : item} className="mt-7 flex flex-wrap gap-3.5">
-            <AnimatedButton onClick={scrollToContactWithHighlight}>Book Free Demo →</AnimatedButton>
-            <AnimatedButton variant="ghost" onClick={() => setModal(true)} ariaLabel="Watch student story">
+          <motion.div variants={reduce ? {} : item} className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3.5">
+            <AnimatedButton onClick={scrollToContactWithHighlight} className="w-full sm:w-auto">Book Free Demo →</AnimatedButton>
+            <AnimatedButton variant="ghost" onClick={() => setModal(true)} ariaLabel="Watch student story" className="w-full sm:w-auto">
               <Play className="h-5 w-5" /> Watch Student Story
             </AnimatedButton>
           </motion.div>
@@ -152,10 +152,10 @@ export default function HeroSection() {
                 initial={reduce ? {} : { opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 + i * 0.12 }}
-                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-md"
+                className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-medium backdrop-blur-md sm:px-4 sm:py-2 sm:text-sm"
               >
                 <span className="mr-1.5 inline-flex align-middle">{b.icon}</span>
-                {b.text} <em className="ml-1 rounded-md bg-accent px-1.5 py-0.5 text-[0.68rem] not-italic text-white">SAMPLE</em>
+                {b.text} <em className="ml-1 rounded-md bg-accent px-1.5 py-0.5 text-[0.65rem] not-italic text-white">SAMPLE</em>
               </motion.span>
             ))}
           </motion.div>
@@ -166,7 +166,9 @@ export default function HeroSection() {
         </motion.div>
         {/* Mobile: show compact illustration below CTAs */}
         <div className="relative flex justify-center lg:hidden">
-          <HeroIllustration />
+          <div className="w-full max-w-[280px] sm:max-w-[340px]">
+            <HeroIllustration />
+          </div>
         </div>
       </div>
 

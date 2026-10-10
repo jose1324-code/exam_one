@@ -69,11 +69,11 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-4 px-6 py-4">
-          <a href="#home" aria-label="BrightPath Academy home" className="flex items-center gap-2.5 font-poppins text-lg font-extrabold">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary to-primaryLight text-xl shadow-soft">
+          <a href="#home" aria-label="BrightPath Academy home" className="flex min-w-0 items-center gap-2.5 font-poppins text-lg font-extrabold">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-primaryLight text-xl shadow-soft">
               <GraduationCap className="h-6 w-6 text-accent" aria-hidden />
             </span>
-            <span className={scrolled ? "text-primary" : "text-white"}>
+            <span className={`truncate ${scrolled ? "text-primary" : "text-white"}`}>
               Bright<span className="text-accent">Path</span> Academy
             </span>
           </a>
@@ -122,12 +122,12 @@ export default function Navbar() {
             </AnimatedButton>
           </div>
           <button
-            className={`md:hidden ${scrolled ? "text-primary" : "text-white"}`}
+            className={`grid h-11 w-11 place-items-center rounded-lg md:hidden ${scrolled ? "text-primary" : "text-white"}`}
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
           >
-            <Menu />
+            <Menu className="h-6 w-6" />
           </button>
         </div>
       </motion.header>
@@ -150,30 +150,45 @@ export default function Navbar() {
             />
             <motion.aside
               aria-label="Mobile menu"
-              className="fixed right-0 top-0 z-[200] h-screen w-[78%] max-w-[320px] bg-white p-6 shadow-lift md:hidden"
+              className="fixed right-0 top-0 z-[200] flex h-screen w-[80%] max-w-[320px] flex-col bg-white shadow-lift md:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 300, damping: 32 }}
             >
-              <button className="float-right text-2xl" onClick={() => setOpen(false)} aria-label="Close menu">
-                <X />
-              </button>
-              <div className="clear-both" />
-              {LINKS.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block border-b border-gray-100 py-3.5 font-semibold text-ink">
-                  {l.label}
-                </a>
-              ))}
-              <AnimatedButton
-                className="mt-5 w-full"
-                onClick={() => {
-                  setOpen(false);
-                  setTimeout(scrollToContactWithHighlight, 250);
-                }}
-              >
-                Book Free Demo
-              </AnimatedButton>
+              <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+                <span className="font-poppins text-base font-extrabold text-primary">Menu</span>
+                <button
+                  className="grid h-10 w-10 place-items-center rounded-lg text-primary hover:bg-gray-100"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <nav className="flex-1 overflow-y-auto px-5 py-2">
+                {LINKS.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="flex min-h-[52px] items-center border-b border-gray-100 font-semibold text-ink hover:text-accent"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </nav>
+              <div className="border-t border-gray-100 px-5 py-5">
+                <AnimatedButton
+                  className="w-full"
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(scrollToContactWithHighlight, 250);
+                  }}
+                >
+                  Book Free Demo
+                </AnimatedButton>
+              </div>
             </motion.aside>
           </>
         )}

@@ -86,18 +86,18 @@ export default function CoursesSection() {
   const visible = COURSES.filter((c) => filter === "All" || c.filter === filter);
 
   return (
-    <section id="courses" className="bg-white py-[clamp(48px,8vw,96px)]">
-      <div className="mx-auto max-w-[1180px] px-6">
+    <section id="courses" className="bg-white py-[clamp(40px,8vw,96px)]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading eyebrow="Programmes" title="Our Programmes" subtitle="Foundation to intensive — pick the batch that fits your child's goal." />
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Filter courses">
+        <div className="mt-6 flex flex-wrap justify-center gap-2 sm:mt-8 sm:gap-3" role="tablist" aria-label="Filter courses">
           {FILTERS.map((f) => (
             <button
               key={f}
               role="tab"
               aria-selected={filter === f}
               onClick={() => setFilter(f)}
-              className={`relative rounded-full px-6 py-2.5 font-poppins text-sm font-bold transition-colors ${filter === f ? "text-white" : "bg-bg text-primary hover:bg-indigo-100"}`}
+              className={`relative rounded-full px-4 py-2 font-poppins text-xs font-bold transition-colors sm:px-6 sm:py-2.5 sm:text-sm ${filter === f ? "text-white" : "bg-bg text-primary hover:bg-indigo-100"}`}
             >
               {filter === f && <motion.span layoutId="filter-pill" className="absolute inset-0 rounded-full bg-accent" />}
               <span className="relative z-10">{f}</span>
@@ -138,7 +138,7 @@ export default function CoursesSection() {
                     {c.emoji}
                   </motion.span>
                 </div>
-                <div className="p-[26px_26px_30px]">
+                <div className="p-[20px_20px_24px] sm:p-[26px_26px_30px]">
                 <motion.span
                   aria-hidden
                   className="absolute left-0 top-0 h-full w-[6px] origin-top bg-accent"
@@ -162,7 +162,7 @@ export default function CoursesSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
                   <motion.span whileHover={reduce ? {} : { x: [0, 3, -3, 0], scale: 1.05 }} className="inline-block">
                     <AnimatedButton className="!min-h-[44px] !px-6 !py-2.5 !text-sm" onClick={scrollToContactWithHighlight}>
                       Book Demo

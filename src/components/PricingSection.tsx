@@ -19,10 +19,10 @@ export default function PricingSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="pricing" className="bg-white py-[clamp(48px,8vw,96px)]">
-      <div className="mx-auto max-w-[1180px] px-6">
+    <section id="pricing" className="bg-white py-[clamp(40px,8vw,96px)]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading eyebrow="Pricing — Sample / Indicative" title="Transparent Pricing" subtitle="No hidden fees. Sample / indicative prices only." />
-        <div ref={ref} className="mt-11 grid gap-6 md:grid-cols-3">
+        <div ref={ref} className="mt-8 grid gap-5 sm:mt-11 sm:gap-6 md:grid-cols-3">
           {PLANS.map((p, i) => (
             <motion.div
               key={p.name}
@@ -36,7 +36,7 @@ export default function PricingSection() {
                   : {}
               }
               transition={{ duration: 0.55, ...(p.popular && !reduce ? { boxShadow: { duration: 2, repeat: Infinity } } : { delay: i * 0.12 }) }}
-              className={`relative flex flex-col rounded-card bg-white p-8 text-center shadow-soft ${
+              className={`relative flex flex-col rounded-card bg-white p-6 text-center shadow-soft sm:p-8 ${
                 p.popular ? "border-[3px] border-accent lg:scale-[1.03]" : "border border-gray-100"
               }`}
             >

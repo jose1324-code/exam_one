@@ -19,8 +19,8 @@ export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-white py-[clamp(48px,8vw,96px)]">
-      <div className="mx-auto max-w-[1180px] px-6">
+    <section id="faq" className="bg-white py-[clamp(40px,8vw,96px)]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading eyebrow="FAQs" title="Frequently Asked Questions" />
         <div className="mx-auto mt-9 max-w-[760px]">
           {FAQS.map((f, i) => {
@@ -38,7 +38,7 @@ export default function FAQSection() {
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-3 px-5 py-[18px] text-left font-poppins text-[0.98rem] font-semibold text-ink"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left font-poppins text-[0.92rem] font-semibold text-ink sm:px-5 sm:py-[18px] sm:text-[0.98rem]"
                 >
                   {f.q}
                   <motion.span animate={{ rotate: isOpen ? 45 : 0 }} transition={{ duration: 0.25 }} className="shrink-0 text-2xl text-accent">

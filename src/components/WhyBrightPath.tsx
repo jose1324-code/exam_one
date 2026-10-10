@@ -104,9 +104,9 @@ function Particles() {
 export default function WhyBrightPath() {
   const reduce = useReducedMotion();
   return (
-    <section id="about" className="relative overflow-hidden py-[clamp(48px,8vw,96px)]">
+    <section id="about" className="relative overflow-hidden py-[clamp(40px,8vw,96px)]">
       <Particles />
-      <div className="relative mx-auto max-w-[1180px] px-6">
+      <div className="relative mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading
           eyebrow="Why BrightPath"
           title="Why Parents Choose BrightPath"

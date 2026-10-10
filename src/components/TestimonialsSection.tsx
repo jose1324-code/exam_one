@@ -51,17 +51,17 @@ export default function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="testimonials" className="bg-bg py-[clamp(48px,8vw,96px)]">
-      <div className="mx-auto max-w-[1180px] px-6">
+    <section id="testimonials" className="bg-bg py-[clamp(40px,8vw,96px)]">
+      <div className="mx-auto max-w-[1180px] px-5 sm:px-6">
         <SectionHeading eyebrow="Sample Testimonials" title="What Parents Say" subtitle="Real-feel, fictional quotes for demo purposes." />
-        <div className="mx-auto mt-2 max-w-2xl rounded-xl border border-amber-500 bg-amber-100 p-3 text-center text-sm font-semibold text-amber-900">
+        <div className="mx-auto mt-2 max-w-2xl rounded-xl border border-amber-500 bg-amber-100 p-2.5 text-center text-xs font-semibold text-amber-900 sm:p-3 sm:text-sm">
           ⚠ Sample testimonials — not real individuals. For illustration only.
         </div>
 
         <div className="embla mt-8" ref={emblaRef} role="region" aria-label="Parent testimonials carousel" tabIndex={0}>
           <div className="embla__container pb-2 pt-2">
             {DATA.map((t) => (
-              <article key={t.name} className="embla__slide relative overflow-hidden rounded-card border border-gray-100 bg-white p-7 shadow-soft">
+              <article key={t.name} className="embla__slide relative overflow-hidden rounded-card border border-gray-100 bg-white p-5 shadow-soft sm:p-7">
                 <motion.span
                   aria-hidden
                   className="pointer-events-none absolute -right-2 -top-8 select-none font-poppins text-[160px] font-extrabold leading-none text-primary"

@@ -14,8 +14,8 @@ export default function Footer() {
   });
 
   return (
-    <footer className="bg-deep pt-16 text-indigo-200">
-      <div className="mx-auto grid max-w-[1180px] gap-9 px-6 md:grid-cols-3">
+    <footer className="bg-deep pt-14 text-indigo-200 sm:pt-16">
+      <div className="mx-auto grid max-w-[1180px] gap-9 px-5 sm:px-6 md:grid-cols-3">
         <motion.div {...col(0)}>
           <span className="mb-3 flex items-center gap-2.5 font-poppins text-lg font-extrabold text-white">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary to-primaryLight">
@@ -57,7 +57,7 @@ export default function Footer() {
             <li>📞 +91 9XXXX XXXXX</li>
             <li>📧 info@brightpathacademy.in</li>
           </ul>
-          <AnimatedButton className="cta-pulse mt-3.5 !min-h-[44px] !px-6 !py-3 !text-sm" onClick={scrollToContactWithHighlight}>
+          <AnimatedButton className="cta-pulse mt-3.5 w-full !min-h-[44px] !px-6 !py-3 !text-sm sm:w-auto" onClick={scrollToContactWithHighlight}>
             Book Free Demo
           </AnimatedButton>
         </motion.div>
