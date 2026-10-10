@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightPath Academy — Chennai's #1 Coaching for Class 10–12 | NEET & JEE Foundation</title>
+<meta name="description" content="BrightPath Academy, Chennai — Class 10-12 tuition and NEET/JEE foundation batches. Small batches, expert faculty. Book a FREE demo class. (Fictional demo website)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1A237E; --accent:#FF6F00; --accent-dark:#E65100;
+  --bg:#F5F7FF; --surface:#FFFFFF; --text:#1C1C2E; --muted:#6B7280;
+  --success:#10B981; --navy2:#283593; --deep:#0D1442;
+  --shadow:0 4px 24px rgba(26,35,126,.08);
+  --shadow-lg:0 12px 40px rgba(26,35,126,.16);
+  --r-card:16px; --r-pill:50px; --r-input:12px;
+  --sec-pad:clamp(48px,8vw,96px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.2;color:var(--text)}
+h2{font-size:clamp(1.6rem,4vw,2.5rem);text-align:center}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:inline-block;background:rgba(255,111,0,.12);padding:8px 18px;border-radius:var(--r-pill);margin-bottom:16px}
+.section{padding:var(--sec-pad) 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec-sub{text-align:center;color:var(--muted);max-width:640px;margin:12px auto 0}
+a{text-decoration:none;color:inherit}
+img,svg{max-width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;padding:15px 32px;border-radius:var(--r-pill);border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;position:relative;overflow:hidden;min-height:52px;text-align:center}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(255,111,0,.35)}
+.btn-accent:hover{background:var(--accent-dark);transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,111,0,.45)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.5);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
+.btn-outline{background:#fff;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:ripple .6s ease-out;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* NAVBAR */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s,backdrop-filter .3s;background:transparent}
+header.nav .nav-inner{max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.nav.scrolled{background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);animation:navFade .4s ease}
+@keyframes navFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.15rem;color:#fff}
+header.nav.scrolled .logo{color:var(--primary)}
+.logo-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--navy2));display:grid;place-items:center;font-size:1.4rem;box-shadow:var(--shadow);flex-shrink:0}
+.logo-icon span{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.logo b{color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-weight:500;font-size:.95rem;color:#fff;position:relative;padding:4px 0}
+header.nav.scrolled .nav-links a{color:var(--text)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;height:3px;width:0;background:var(--accent);border-radius:3px;transition:width .25s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--accent)!important}
+.nav-cta{padding:12px 26px;font-size:.92rem;min-height:44px}
+.hamburger{display:none;background:none;border:0;font-size:1.8rem;cursor:pointer;color:#fff;line-height:1}
+header.nav.scrolled .hamburger{color:var(--primary)}
+.mobile-drawer{display:none}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#1A237E 0%,#283593 40%,#0D1442 70%,#1A237E 100%);background-size:300% 300%;animation:mesh 8s ease-in-out infinite;padding:130px 0 80px;color:#fff}
+@keyframes mesh{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:float 8s ease-in-out infinite;pointer-events:none}
+.blob1{width:420px;height:420px;background:#5C6BC0;top:-120px;right:-80px}
+.blob2{width:340px;height:340px;background:#FF6F00;bottom:-100px;left:-80px;opacity:.32;animation-delay:2s}
+.blob3{width:260px;height:260px;background:#3949AB;top:40%;left:35%;opacity:.4;animation-delay:4s}
+@keyframes float{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-30px) translateX(20px)}}
+.hero-grid{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;width:100%}
+.hero .eyebrow{background:rgba(255,111,0,.2);color:#FFB74D;border:1px solid rgba(255,111,0,.4)}
+.hero h1{font-size:clamp(2rem,5.5vw,3.6rem);color:#fff;margin-bottom:18px}
+.type-wrap{color:#FFB74D;border-right:3px solid #FFB74D;padding-right:6px;white-space:nowrap;animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{border-color:transparent}}
+.hero p.sub{font-size:clamp(1rem,2.2vw,1.2rem);color:#C5CAE9;max-width:520px;margin-bottom:28px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.trust-badges{display:flex;gap:12px;flex-wrap:wrap}
+.trust-badges span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:9px 16px;border-radius:var(--r-pill);font-size:.85rem;font-weight:500}
+.sample-tag{font-size:.68rem;background:#FF6F00;color:#fff;border-radius:6px;padding:1px 7px;margin-left:4px;vertical-align:middle;letter-spacing:.5px}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+.stat-card{position:absolute;background:#fff;color:var(--text);border-radius:14px;padding:12px 18px;box-shadow:var(--shadow-lg);font-size:.82rem;font-weight:600;animation:bob 3s ease-in-out infinite;text-align:center;line-height:1.4}
+.stat-card b{color:var(--primary);font-size:1.05rem;display:block}
+.stat-card small{color:var(--muted);font-weight:500}
+.stat1{top:6%;left:-6%;animation-delay:0s}
+.stat2{bottom:8%;right:-4%;animation-delay:1.5s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.scroll-arrow{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#fff;font-size:1.6rem;animation:arrowBob 1.6s infinite;z-index:3;text-decoration:none}
+@keyframes arrowBob{0%,100%{transform:translate(-50%,0);opacity:1}50%{transform:translate(-50%,10px);opacity:.5}}
+
+/* MARQUEE */
+.marquee-bar{background:var(--primary);color:#fff;padding:18px 0;overflow:hidden;white-space:nowrap}
+.marquee-bar .label{text-align:center;font-family:'Space Grotesk';font-size:.75rem;letter-spacing:2px;opacity:.8;margin-bottom:8px;text-transform:uppercase}
+.marquee-track{display:inline-flex;gap:56px;animation:marquee 18s linear infinite;padding-left:24px;font-family:'Poppins';font-weight:600;font-size:1.05rem}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.reveal.d4{transition-delay:.4s}.reveal.d5{transition-delay:.5s}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.card{background:var(--surface);border-radius:var(--r-card);box-shadow:var(--shadow);padding:30px 26px;transition:transform .25s,box-shadow .25s,border .25s;border:2px solid transparent}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--accent)}
+.icon-circle{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--navy2));display:grid;place-items:center;font-size:1.6rem;margin-bottom:16px;color:#fff}
+.card h3{font-size:1.08rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem}
+
+/* COURSES */
+#courses{background:#fff}
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
+.course-card{border-top:6px solid var(--accent);position:relative}
+.course-card .tag{font-family:'Space Grotesk';font-size:.72rem;letter-spacing:1.5px;color:var(--accent);font-weight:700}
+.course-card h3{margin:6px 0 12px;font-size:1.25rem}
+.course-card ul{list-style:none;margin-bottom:20px}
+.course-card li{padding:7px 0;border-bottom:1px dashed #E5E7EB;font-size:.92rem;color:#374151}
+.course-card li strong{color:var(--primary)}
+.course-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.know{color:var(--accent);font-weight:600;font-size:.92rem}
+.know:hover{text-decoration:underline}
+.course-links .btn{padding:11px 24px;min-height:44px;font-size:.9rem}
+
+/* STATS */
+.stats{background:linear-gradient(135deg,var(--deep),var(--primary));color:#fff;text-align:center}
+.stats h2{color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px}
+.stat-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-card);padding:32px 16px;backdrop-filter:blur(6px)}
+.stat-box .num{font-family:'Poppins';font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#FFB74D}
+.stat-box p{color:#C5CAE9;margin-top:6px;font-size:.92rem}
+.disclaimer{margin-top:28px;color:#9FA8DA;font-size:.82rem;font-style:italic}
+
+/* TESTIMONIALS */
+.carousel-wrap{position:relative;margin-top:40px}
+.carousel{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 24px;scrollbar-width:none}
+.carousel::-webkit-scrollbar{display:none}
+.t-card{min-width:min(340px,85vw);scroll-snap-align:center}
+.t-card .avatar{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:'Poppins';font-weight:700;font-size:1.1rem;flex-shrink:0}
+.t-head{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.t-head b{display:block;font-size:.95rem}
+.t-head small{color:var(--muted);font-size:.78rem}
+.stars{color:#F59E0B;letter-spacing:2px;margin-bottom:8px}
+.t-card p{font-size:.92rem;color:#374151}
+.warn-banner{background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;border-radius:12px;padding:12px 18px;font-size:.85rem;font-weight:600;text-align:center;margin-top:8px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:6px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;background:#C7D2FE;cursor:pointer}
+.dots button.active{background:var(--accent);width:28px;border-radius:6px}
+.car-nav{display:flex;gap:10px;justify-content:center;margin-top:14px}
+.car-nav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.2rem;cursor:pointer}
+.car-nav button:hover{background:var(--primary);color:#fff}
+
+/* PRICING */
+#pricing{background:#fff}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;align-items:stretch}
+.price-card{text-align:center;display:flex;flex-direction:column}
+.price-card.popular{border:3px solid var(--accent);transform:scale(1.03);position:relative}
+.pop-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:'Space Grotesk';font-size:.72rem;font-weight:700;letter-spacing:1px;padding:6px 18px;border-radius:var(--r-pill);white-space:nowrap}
+.price{font-family:'Poppins';font-size:2rem;font-weight:800;color:var(--primary);margin:12px 0 4px}
+.price small{font-size:.85rem;color:var(--muted);font-weight:500}
+.price-card ul{list-style:none;text-align:left;margin:18px 0 24px;flex:1}
+.price-card li{padding:9px 0 9px 28px;position:relative;font-size:.9rem;color:#374151;border-bottom:1px solid #F3F4F6}
+.price-card li::before{content:'✓';position:absolute;left:4px;color:var(--success);font-weight:700}
+.price-note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:24px;font-style:italic}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px;align-items:start}
+.contact-info .card{margin-bottom:18px}
+.contact-info p{margin:8px 0;color:#374151;font-size:.94rem}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:700;padding:13px 26px;border-radius:var(--r-pill);margin-top:12px}
+.wa-btn:hover{background:#1DA851;transform:translateY(-2px)}
+.map-box{border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow);margin-top:18px;border:0}
+.map-box iframe{width:100%;height:220px;border:0;display:block}
+form.enquiry{background:#fff;border-radius:var(--r-card);box-shadow:var(--shadow-lg);padding:32px 28px}
+form.enquiry h3{margin-bottom:4px}
+form.enquiry .fsub{color:var(--muted);font-size:.88rem;margin-bottom:20px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:6px}
+.field label i{color:#EF4444;font-style:normal}
+.field input,.field select,.field textarea{width:100%;min-height:48px;border:2px solid #E5E7EB;border-radius:var(--r-input);padding:12px 14px;font-family:'Inter';font-size:.95rem;background:#F9FAFB;transition:border .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--primary);background:#fff}
+.field textarea{min-height:100px;resize:vertical}
+.checks{display:flex;gap:10px;flex-wrap:wrap}
+.checks label{display:inline-flex;align-items:center;gap:7px;background:#F5F7FF;border:2px solid #E5E7EB;border-radius:var(--r-pill);padding:9px 16px;font-weight:500;font-size:.87rem;cursor:pointer;margin:0}
+.checks input{width:auto;min-height:auto;accent-color:var(--accent)}
+.err{color:#DC2626;font-size:.78rem;margin-top:4px;display:none}
+.err.show{display:block}
+.form-success{display:none;background:#ECFDF5;border:2px solid var(--success);color:#065F46;border-radius:12px;padding:18px;font-weight:600;text-align:center;margin-top:16px}
+.form-success.show{display:block;animation:navFade .4s ease}
+
+/* FAQ */
+#faq{background:#fff}
+.faq-list{max-width:760px;margin:36px auto 0}
+.faq-item{background:var(--bg);border-radius:14px;margin-bottom:12px;overflow:hidden;border:2px solid transparent;transition:border .2s}
+.faq-item.open{border-color:var(--accent)}
+.faq-q{width:100%;background:none;border:0;text-align:left;font-family:'Poppins';font-weight:600;font-size:.98rem;padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--text)}
+.faq-q .plus{font-size:1.4rem;color:var(--accent);transition:transform .3s;flex-shrink:0}
+.faq-item.open .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 20px 18px;color:var(--muted);font-size:.92rem}
+
+/* FOOTER */
+footer{background:var(--deep);color:#C5CAE9;padding:64px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;max-width:1180px;margin:0 auto;padding:0 24px}
+footer .logo{color:#fff;margin-bottom:12px}
+.foot-grid p{font-size:.9rem}
+.foot-grid h4{color:#fff;margin-bottom:14px;font-size:1rem}
+.foot-grid ul{list-style:none}
+.foot-grid li{margin-bottom:9px}
+.foot-grid a:hover{color:var(--accent)}
+.socials{display:flex;gap:10px;margin-top:14px}
+.socials a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:1.1rem;transition:background .2s,transform .2s}
+.socials a:hover{background:var(--accent);transform:translateY(-3px)}
+.bottom-bar{border-top:1px solid rgba(255,255,255,.12);margin-top:44px;padding:20px 24px;text-align:center;font-size:.8rem;color:#9FA8DA}
+
+/* FLOATING MOBILE CTA */
+.float-demo{display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:90;background:var(--accent);color:#fff;text-align:center;font-family:'Poppins';font-weight:700;padding:16px;border-radius:var(--r-pill);box-shadow:0 10px 30px rgba(255,111,0,.5)}
+
+@media(max-width:1024px){
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .price-grid{grid-template-columns:repeat(3,minmax(260px,1fr));overflow-x:auto;padding-bottom:16px;scroll-snap-type:x mandatory}
+  .price-card{min-width:260px;scroll-snap-align:center}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  .mobile-drawer{display:block;position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;background:#fff;z-index:200;transition:right .3s ease;box-shadow:-10px 0 40px rgba(0,0,0,.2);padding:28px 24px}
+  .mobile-drawer.open{right:0}
+  .mobile-drawer a.dlink{display:block;padding:14px 0;border-bottom:1px solid #F3F4F6;font-weight:600;color:var(--text)}
+  .mobile-drawer .btn{width:100%;margin-top:18px}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150;display:none}
+  .overlay.show{display:block}
+  .close-btn{background:none;border:0;font-size:1.6rem;cursor:pointer;float:right}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero p.sub{margin:0 auto 28px}
+  .hero-ctas,.trust-badges{justify-content:center}
+  .hero-art{display:none}
+  .course-grid,.contact-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;text-align:center}
+  .socials{justify-content:center}
+  .float-demo{display:block}
+  body{padding-bottom:70px}
+}
+@media(max-width:640px){
+  .feat-grid{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:14px}
+  form.enquiry{padding:24px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="BrightPath Academy home">
+      <span class="logo-icon" aria-hidden="true"><span>🎓</span></span>
+      <span>Bright<b>Path</b> Academy</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-accent nav-cta">Book Free Demo</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+<aside class="mobile-drawer" id="drawer" aria-label="Mobile menu">
+  <button class="close-btn" id="closeDrawer" aria-label="Close menu">✕</button>
+  <div style="clear:both"></div>
+  <a class="dlink" href="#home">Home</a>
+  <a class="dlink" href="#courses">Courses</a>
+  <a class="dlink" href="#results">Results</a>
+  <a class="dlink" href="#pricing">Pricing</a>
+  <a class="dlink" href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-accent dlink">Book Free Demo</a>
+</aside>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="blob blob1" aria-hidden="true"></div>
+  <div class="blob blob2" aria-hidden="true"></div>
+  <div class="blob blob3" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">📍 Chennai's #1 Coaching for Class 10–12</span>
+      <h1>Unlock Your Child's <br><span class="type-wrap" id="typewriter" aria-live="polite"></span></h1>
+      <p class="sub">Expert NEET &amp; JEE foundation batches. Small batches. Big results. First demo class — absolutely <strong style="color:#fff">FREE</strong>.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-accent">Book Free Demo →</a>
+        <a href="#testimonials" class="btn btn-ghost">▶ Watch Student Story</a>
+      </div>
+      <div class="trust-badges" role="list">
+        <span role="listitem">⭐ 4.9/5 Rating <em class="sample-tag">SAMPLE</em></span>
+        <span role="listitem">👨‍🎓 1,200+ Students <em class="sample-tag">SAMPLE</em></span>
+        <span role="listitem">🏆 98% Board Pass Rate <em class="sample-tag">SAMPLE</em></span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="false">
+      <svg viewBox="0 0 420 340" role="img" aria-label="Illustration of a student studying at a desk">
+        <ellipse cx="210" cy="315" rx="150" ry="16" fill="rgba(0,0,0,.25)"/>
+        <rect x="90" y="230" width="240" height="14" rx="7" fill="#FF6F00"/>
+        <rect x="110" y="244" width="16" height="60" fill="#5C6BC0"/>
+        <rect x="294" y="244" width="16" height="60" fill="#5C6BC0"/>
+        <rect x="120" y="150" width="90" height="90" rx="12" fill="#fff"/>
+        <rect x="132" y="165" width="66" height="8" rx="4" fill="#C5CAE9"/>
+        <rect x="132" y="180" width="50" height="8" rx="4" fill="#FFCC80"/>
+        <rect x="132" y="195" width="60" height="8" rx="4" fill="#C5CAE9"/>
+        <rect x="132" y="210" width="40" height="8" rx="4" fill="#C5CAE9"/>
+        <circle cx="290" cy="110" r="34" fill="#FFCC99"/>
+        <path d="M258 105 q32 -38 64 0 l0 -14 q-32 -26 -64 0z" fill="#1C1C2E"/>
+        <circle cx="279" cy="112" r="3.5" fill="#1C1C2E"/><circle cx="301" cy="112" r="3.5" fill="#1C1C2E"/>
+        <path d="M282 126 q8 8 16 0" stroke="#1C1C2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <rect x="255" y="148" width="70" height="86" rx="16" fill="#3949AB"/>
+        <rect x="248" y="160" width="22" height="52" rx="11" fill="#3949AB"/>
+        <rect x="310" y="160" width="22" height="52" rx="11" fill="#3949AB"/>
+        <rect x="228" y="120" width="52" height="60" rx="10" fill="#fff" transform="rotate(-12 228 120)"/>
+        <rect x="236" y="130" width="36" height="6" rx="3" fill="#9FA8DA" transform="rotate(-12 236 130)"/>
+        <rect x="236" y="142" width="28" height="6" rx="3" fill="#FF6F00" transform="rotate(-12 236 142)"/>
+        <circle cx="110" cy="90" r="26" fill="#FFB74D" opacity=".9"/>
+        <text x="110" y="99" text-anchor="middle" font-size="26">💡</text>
+        <circle cx="350" cy="200" r="20" fill="#fff" opacity=".95"/>
+        <text x="350" y="208" text-anchor="middle" font-size="20">📚</text>
+        <g font-family="Poppins" font-weight="700" font-size="13" fill="#1A237E">
+          <rect x="40" y="250" width="90" height="30" rx="10" fill="#fff"/><text x="85" y="270" text-anchor="middle">A+ Grade</text>
+        </g>
+      </svg>
+      <div class="stat-card stat1"><b>42 Selections</b>NEET 2024 <small>(Sample)</small></div>
+      <div class="stat-card stat2"><b>28 Qualifiers</b>JEE Mains <small>(Sample)</small></div>
+    </div>
+  </div>
+  <a href="#featured" class="scroll-arrow" aria-label="Scroll down">↓</a>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="marquee-bar" id="featured">
+  <div class="label">As featured in — <em>Sample Media Logos, for illustration only</em></div>
+  <div class="marquee-track" aria-hidden="true">
+    <span>📰 The Hindu Education</span><span>⭐</span><span>📰 Times NIE</span><span>⭐</span><span>📰 Deccan Chronicle</span><span>⭐</span>
+    <span>📰 The Hindu Education</span><span>⭐</span><span>📰 Times NIE</span><span>⭐</span><span>📰 Deccan Chronicle</span><span>⭐</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow" style="display:table;margin:0 auto 16px">Why BrightPath</span>
+    <h2>Why Parents Choose BrightPath</h2>
+    <p class="sec-sub">Personal attention, proven methods and constant parent partnership — everything your child needs to top boards &amp; crack entrances.</p></div>
+    <div class="feat-grid">
+      <div class="card reveal"><div class="icon-circle">🎯</div><h3>Expert Faculty</h3><p>IIT &amp; AIIMS alumni with 10+ years teaching experience in every classroom.</p></div>
+      <div class="card reveal d1"><div class="icon-circle">📊</div><h3>Data-Driven Learning</h3><p>Weekly tests, analytics dashboards and gap identification for each student.</p></div>
+      <div class="card reveal d2"><div class="icon-circle">👥</div><h3>Small Batches</h3><p>Max 20 students per batch for true personal attention and doubt-clearing.</p></div>
+      <div class="card reveal"><div class="icon-circle">💻</div><h3>Hybrid Classes</h3><p>Attend from campus or from home — your choice, same quality, live interaction.</p></div>
+      <div class="card reveal d1"><div class="icon-circle">🏠</div><h3>Safe Environment</h3><p>CCTV-monitored campus in Anna Nagar, Chennai with verified staff &amp; support.</p></div>
+      <div class="card reveal d2"><div class="icon-circle">📞</div><h3>Parent Updates</h3><p>Weekly progress reports sent directly to parents via SMS &amp; WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow" style="display:table;margin:0 auto 16px">Programmes</span>
+    <h2>Our Programmes</h2>
+    <p class="sec-sub">Foundation to intensive — pick the batch that fits your child's goal.</p></div>
+    <div class="course-grid">
+      <article class="card course-card reveal">
+        <span class="tag">CLASS 10 FOUNDATION</span><h3>Class 10 — All Subjects</h3>
+        <ul><li><strong>Subjects:</strong> Maths, Science, English, Social</li><li><strong>Duration:</strong> April – March (Full Year)</li><li><strong>Batch size:</strong> Max 20 students</li><li><strong>Timing:</strong> 4 PM – 7 PM (Weekdays)</li></ul>
+        <div class="course-links"><a href="#contact" class="btn btn-accent">Book Demo</a><a href="#contact" class="know">Know More →</a></div>
+      </article>
+      <article class="card course-card reveal d1">
+        <span class="tag">CLASS 11 &amp; 12 SCIENCE</span><h3>Class 11 &amp; 12 Science</h3>
+        <ul><li><strong>Subjects:</strong> Physics, Chemistry, Maths / Biology</li><li><strong>Duration:</strong> Full academic year + revision</li><li><strong>Board:</strong> CBSE &amp; State Board</li><li><strong>Timing:</strong> Evenings + weekend tests</li></ul>
+        <div class="course-links"><a href="#contact" class="btn btn-accent">Book Demo</a><a href="#contact" class="know">Know More →</a></div>
+      </article>
+      <article class="card course-card reveal d2">
+        <span class="tag">NEET FOUNDATION</span><h3>NEET Foundation (Class 11–12)</h3>
+        <ul><li><strong>Subjects:</strong> Physics, Chemistry, Biology</li><li><strong>Special:</strong> Mock tests every Sunday, NCERT deep-dive</li><li><strong>Batch size:</strong> Max 20 students</li><li><strong>Bonus:</strong> AIIMS alumni mentoring</li></ul>
+        <div class="course-links"><a href="#contact" class="btn btn-accent">Book Demo</a><a href="#contact" class="know">Know More →</a></div>
+      </article>
+      <article class="card course-card reveal d3">
+        <span class="tag">JEE MAINS FOUNDATION</span><h3>JEE Mains Foundation</h3>
+        <ul><li><strong>Subjects:</strong> Physics, Chemistry, Maths</li><li><strong>Special:</strong> Problem-solving sessions, past paper analysis</li><li><strong>Batch size:</strong> Max 20 students</li><li><strong>Bonus:</strong> IIT alumni mentoring</li></ul>
+        <div class="course-links"><a href="#contact" class="btn btn-accent">Book Demo</a><a href="#contact" class="know">Know More →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section stats" id="results">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">Results — Sample Data</span>
+    <h2>Results That Speak (Sample Data)</h2></div>
+    <div class="stats-grid">
+      <div class="stat-box reveal"><div class="num"><span class="count" data-target="1200">0</span>+</div><p>Students Enrolled<br><small>(Sample)</small></p></div>
+      <div class="stat-box reveal d1"><div class="num"><span class="count" data-target="42">0</span></div><p>NEET Selections 2024<br><small>(Sample)</small></p></div>
+      <div class="stat-box reveal d2"><div class="num"><span class="count" data-target="98">0</span>%</div><p>Board Pass Rate<br><small>(Sample)</small></p></div>
+      <div class="stat-box reveal d3"><div class="num"><span class="count" data-target="4.9" data-decimal="1">0</span>★</div><p>Parent Rating<br><small>(Sample)</small></p></div>
+    </div>
+    <p class="disclaimer">* All statistics above are sample / illustrative data for demonstration purposes only.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="eyebrow">Sample Testimonials</span>
+    <h2>What Parents Say</h2>
+    <p class="sec-sub">Real-feel, fictional quotes for demo purposes.</p></div>
+    <div class="warn-banner reveal">⚠ Sample testimonials — not real individuals. For illustration only.</div>
+    <div class="carousel-wrap reveal">
+      <div class="carousel" id="carousel" role="region" aria-label="Parent testimonials carousel" tabindex="0">
+        <article class="card t-card"><div class="t-head"><span class="avatar" style="background:#1A237E">AS</span><div><b>Parent of Arjun S., Class 12</b><small>(Sample)</small></div></div><div class="stars" aria-label="5 star rating">★★★★★</div><p>"Weekly reports kept us stress-free. Arjun's physics scores jumped from 70s to 90s in three months."</p></article>
+        <article class="card t-card"><div class="t-head"><span class="avatar" style="background:#FF6F00">PK</span><div><b>Parent of Priya K., Class 10</b><small>(Sample)</small></div></div><div class="stars" aria-label="5 star rating">★★★★★</div><p>"Small batch of 18 meant every doubt was answered. The free demo itself convinced us to join."</p></article>
+        <article class="card t-card"><div class="t-head"><span class="avatar" style="background:#10B981">MR</span><div><b>Parent of Meera R., NEET</b><small>(Sample)</small></div></div><div class="stars" aria-label="5 star rating">★★★★★</div><p>"Sunday mocks + NCERT deep-dives built real exam temperament. Wonderful mentoring and care."</p></article>
+        <article class="card t-card"><div class="t-head"><span class="avatar" style="background:#7C3AED">DV</span><div><b>Parent of Deepak V., JEE</b><small>(Sample)</small></div></div><div class="stars" aria-label="5 star rating">★★★★★</div><p>"Problem-solving sessions are superb. Faculty personally called us every month with a clear plan."</p></article>
+      </div>
+      <div class="dots" id="dots" role="tablist" aria-label="Carousel navigation"></div>
+      <div class="car-nav"><button id="prevBtn" aria-label="Previous testimonial">‹</button><button id="nextBtn" aria-label="Next testimonial">›</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="eyebrow">Pricing — Sample / Indicative</span>
+    <h2>Transparent Pricing</h2>
+    <p class="sec-sub">No hidden fees. Sample / indicative prices only.</p></div>
+    <div class="price-grid">
+      <div class="card price-card reveal"><h3>STARTER</h3><p style="color:var(--muted);font-size:.85rem">Class 10</p><div class="price">₹2,500<small>/month (Sample)</small></div>
+        <ul><li>All subjects covered</li><li>Study material included</li><li>Weekly tests</li><li>Doubt sessions</li></ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%">Book Demo</a></div>
+      <div class="card price-card popular reveal d1"><span class="pop-badge">⭐ MOST POPULAR</span><h3>Class 11 &amp; 12 Science</h3><p style="color:var(--muted);font-size:.85rem">Boards + Foundation</p><div class="price">₹3,500<small>/month (Sample)</small></div>
+        <ul><li>Everything in Starter</li><li>Sunday mock tests</li><li>Parent progress reports</li><li>1-on-1 doubt sessions</li></ul>
+        <a href="#contact" class="btn btn-accent" style="width:100%">Book Demo</a></div>
+      <div class="card price-card reveal d2"><h3>NEET / JEE INTENSIVE</h3><p style="color:var(--muted);font-size:.85rem">Entrance + Boards</p><div class="price">₹4,500<small>/month (Sample)</small></div>
+        <ul><li>Full coaching + test series</li><li>Personal mentoring</li><li>Past-paper marathons</li><li>Parent counselling</li></ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%">Book Demo</a></div>
+    </div>
+    <p class="price-note">Prices are indicative samples only. Contact us for actual fee structure.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="eyebrow">Get In Touch</span>
+    <h2>Book Your Free Demo Class</h2>
+    <p class="sec-sub">Fill the form — we'll call you within 24 hours. (Demo form, no backend.)</p></div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="card"><h3>📍 Visit Us</h3><p>12, Anna Nagar East,<br>Chennai – 600102 <small style="color:var(--muted)">(Sample address)</small></p>
+        <p>📞 <a href="tel:+919XXXXXXXXX" style="color:var(--primary);font-weight:600">+91 9XXXX XXXXX</a> <small style="color:var(--muted)">(Sample)</small></p>
+        <p>📧 <a href="mailto:info@brightpathacademy.in" style="color:var(--primary);font-weight:600">info@brightpathacademy.in</a> <small style="color:var(--muted)">(Sample)</small></p>
+        <a class="wa-btn" href="https://wa.me/919XXXXXXXXX" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 Chat on WhatsApp</a></div>
+        <div class="map-box"><iframe title="Map placeholder — Chennai, Anna Nagar" loading="lazy" src="https://www.google.com/maps?q=Anna+Nagar+East+Chennai&output=embed"></iframe></div>
+      </div>
+      <form class="enquiry reveal d1" id="demoForm" novalidate aria-label="Free demo booking form">
+        <h3>Enquiry Form</h3><p class="fsub">All sample data — nothing is sent anywhere.</p>
+        <div class="field"><label for="fname">Full Name <i>*</i></label><input id="fname" name="fname" type="text" placeholder="e.g. Lakshmi Narayanan" autocomplete="name" required><span class="err" id="e-fname">Please enter your full name.</span></div>
+        <div class="field"><label for="phone">Parent's Phone <i>*</i></label><input id="phone" name="phone" type="tel" placeholder="+91 9XXXX XXXXX" autocomplete="tel" required><span class="err" id="e-phone">Enter a valid 10-digit Indian mobile number.</span></div>
+        <div class="field"><label for="sclass">Student's Class <i>*</i></label>
+          <select id="sclass" name="sclass" required><option value="">— Select class —</option><option>Class 10</option><option>Class 11</option><option>Class 12</option><option>Dropper / Repeater</option></select>
+          <span class="err" id="e-sclass">Please select a class.</span></div>
+        <div class="field"><label>Subject Interest <i>*</i> <span style="font-weight:400;color:var(--muted)">(tick at least one)</span></label>
+          <div class="checks" role="group" aria-label="Subject interest">
+            <label><input type="checkbox" name="interest" value="Maths"> Maths</label>
+            <label><input type="checkbox" name="interest" value="Science"> Science</label>
+            <label><input type="checkbox" name="interest" value="NEET"> NEET</label>
+            <label><input type="checkbox" name="interest" value="JEE"> JEE</label>
+          </div><span class="err" id="e-interest">Please select at least one subject.</span></div>
+        <div class="field"><label for="batch">Preferred Batch Time</label>
+          <select id="batch" name="batch"><option>Evening 4–7 PM (Weekdays)</option><option>Morning 7–10 AM (Weekends)</option><option>Online — flexible</option></select></div>
+        <div class="field"><label for="msg">Message (optional)</label><textarea id="msg" name="msg" placeholder="Any question for our counsellor?"></textarea></div>
+        <button type="submit" class="btn btn-accent" style="width:100%">Book My Free Demo Class →</button>
+        <div class="form-success" id="formSuccess" role="status">✅ Thank you! We'll call you within 24 hours to confirm your FREE demo. (Demo message — no data was sent.)</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center"><span class="eyebrow">FAQs</span>
+    <h2>Frequently Asked Questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Is the first demo class really free?<span class="plus">+</span></button><div class="faq-a"><p>Yes! Your first demo class is 100% free with no obligation. Just fill the enquiry form and we'll schedule it.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">What board do you teach — CBSE or State Board?<span class="plus">+</span></button><div class="faq-a"><p>Both. We run separate batches for CBSE and Tamil Nadu State Board, with board-specific tests and material.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">How many students are in each batch?<span class="plus">+</span></button><div class="faq-a"><p>Maximum 20 students per batch — that's a hard cap, so every child gets personal attention.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Do you provide study material?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Printed notes, NCERT summaries, chapter-wise assignments and Sunday mock papers are all included.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Can my child attend both school and coaching?<span class="plus">+</span></button><div class="faq-a"><p>Absolutely. Evening (4–7 PM) and weekend batches are designed around school hours, plus hybrid online options.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Do you offer online classes?<span class="plus">+</span></button><div class="faq-a"><p>Yes — every batch is hybrid. Attend from campus in Anna Nagar or join the same live class from home.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div><a href="#home" class="logo"><span class="logo-icon"><span>🎓</span></span><span>Bright<b>Path</b> Academy</span></a>
+      <p>Chennai's friendly coaching for Class 10–12, NEET &amp; JEE foundations. Small batches, big results — first demo free.</p>
+      <div class="socials"><a href="#" aria-label="Facebook">📘</a><a href="#" aria-label="Instagram">📸</a><a href="#" aria-label="YouTube">▶️</a></div></div>
+    <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#courses">Courses</a></li><li><a href="#results">Results</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h4>Contact (Sample)</h4><ul><li>📍 Anna Nagar East, Chennai – 600102</li><li>📞 +91 9XXXX XXXXX</li><li>📧 info@brightpathacademy.in</li></ul><a href="#contact" class="btn btn-accent" style="margin-top:14px;padding:12px 26px;font-size:.9rem">Book Free Demo</a></div>
+  </div>
+  <div class="bottom-bar">© 2024 BrightPath Academy, Chennai. This is a fictional website created for educational purposes only. All names, stats, prices &amp; testimonials are sample data.</div>
+</footer>
+
+<a href="#contact" class="float-demo" aria-label="Book free demo">Book Free Demo →</a>
+
+<script>
+// NAVBAR glass on scroll
+const nav = document.getElementById('navbar');
+const onScrollNav = () => nav.classList.toggle('scrolled', window.scrollY > 80);
+window.addEventListener('scroll', onScrollNav, {passive:true}); onScrollNav();
+
+// Hamburger / drawer
+const drawer = document.getElementById('drawer'), overlay = document.getElementById('overlay');
+const ham = document.getElementById('hamburger'), closeBtn = document.getElementById('closeDrawer');
+function setDrawer(open){ drawer.classList.toggle('open', open); overlay.classList.toggle('show', open); ham.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; }
+ham.addEventListener('click', ()=>setDrawer(true));
+closeBtn.addEventListener('click', ()=>setDrawer(false));
+overlay.addEventListener('click', ()=>setDrawer(false));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>setDrawer(false)));
+
+// Typewriter
+(function(){
+  const el = document.getElementById('typewriter');
+  const words = ['True Potential','Bright Future','NEET Dreams','JEE Success'];
+  let wi=0, ci=0, deleting=false;
+  function tick(){
+    const word = words[wi];
+    el.textContent = word.slice(0, ci);
+    let delay = deleting ? 55 : 110;
+    if(!deleting && ci === word.length){ delay = 1600; deleting = true; }
+    else if(deleting && ci === 0){ deleting = false; wi = (wi+1)%words.length; delay = 350; }
+    else ci += deleting ? -1 : 1;
+    setTimeout(tick, delay);
+  }
+  tick();
+})();
+
+// Scroll reveal (IntersectionObserver, stagger via CSS delay classes already set)
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Count-up
+const cio = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target, target = parseFloat(el.dataset.target), dec = parseInt(el.dataset.decimal||'0');
+    const dur = 1600, t0 = performance.now();
+    function step(t){
+      const p = Math.min((t-t0)/dur, 1), ease = 1-Math.pow(1-p,3);
+      const val = target*ease;
+      el.textContent = dec ? val.toFixed(dec) : Math.round(val).toLocaleString('en-IN');
+      if(p<1) requestAnimationFrame(step); else el.textContent = dec ? target.toFixed(dec) : target.toLocaleString('en-IN');
+    }
+    requestAnimationFrame(step); cio.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+// Ripple on CTA buttons
+document.querySelectorAll('.btn').forEach(btn=>{
+  btn.addEventListener('click', function(e){
+    const r = document.createElement('span'); r.className='ripple';
+    const rect = this.getBoundingClientRect(), size = Math.max(rect.width, rect.height);
+    r.style.width = r.style.height = size+'px';
+    r.style.left = (e.clientX-rect.left-size/2)+'px'; r.style.top = (e.clientY-rect.top-size/2)+'px';
+    this.appendChild(r); setTimeout(()=>r.remove(), 650);
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{ o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; o.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+    if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; q.setAttribute('aria-expanded','true'); }
+  });
+});
+
+// Carousel + dots
+(function(){
+  const car = document.getElementById('carousel'), dots = document.getElementById('dots');
+  const cards = car.children.length;
+  for(let i=0;i<cards;i++){ const d=document.createElement('button'); d.setAttribute('aria-label','Go to testimonial '+(i+1)); d.addEventListener('click',()=>scrollToCard(i)); dots.appendChild(d); }
+  const dotEls = dots.children;
+  function activeIdx(){ const w = car.children[0].offsetWidth + 20; return Math.round(car.scrollLeft / w); }
+  function paint(){ const i = Math.min(activeIdx(), cards-1); [...dotEls].forEach((d,k)=>d.classList.toggle('active', k===i)); }
+  function scrollToCard(i){ const w = car.children[0].offsetWidth + 20; car.scrollTo({left:i*w, behavior:'smooth'}); }
+  document.getElementById('prevBtn').addEventListener('click', ()=>{ const i=activeIdx(); scrollToCard((i-1+cards)%cards); });
+  document.getElementById('nextBtn').addEventListener('click', ()=>{ const i=activeIdx(); scrollToCard((i+1)%cards); });
+  car.addEventListener('scroll', paint, {passive:true}); paint();
+  let auto = setInterval(()=>{ const i=activeIdx(); scrollToCard(i>=cards-1?0:i+1); }, 4500);
+  car.addEventListener('pointerdown', ()=>{ clearInterval(auto); }, {once:true});
+})();
+
+// Scroll spy
+(function(){
+  const links = document.querySelectorAll('#navLinks a');
+  const secs = [...links].map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const spy = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(s=>spy.observe(s));
+})();
+
+// Form validation + success
+document.getElementById('demoForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let ok = true;
+  const name = document.getElementById('fname'), phone = document.getElementById('phone'), sclass = document.getElementById('sclass');
+  const show = (id, bad)=>{ document.getElementById(id).classList.toggle('show', bad); if(bad) ok=false; };
+  show('e-fname', name.value.trim().length < 3);
+  const digits = phone.value.replace(/\D/g,'').replace(/^91/,'');
+  show('e-phone', !/^[6-9]\d{9}$/.test(digits));
+  show('e-sclass', !sclass.value);
+  const checked = document.querySelectorAll('input[name="interest"]:checked').length > 0;
+  show('e-interest', !checked);
+  const success = document.getElementById('formSuccess');
+  if(ok){
+    success.classList.add('show');
+    success.scrollIntoView({behavior:'smooth', block:'nearest'});
+    this.querySelectorAll('input[type=text],input[type=tel],textarea').forEach(i=>i.value='');
+    this.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false);
+    sclass.selectedIndex = 0;
+  } else { success.classList.remove('show'); }
+});
+</script>
+</body>
+</html>
