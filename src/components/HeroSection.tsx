@@ -45,9 +45,11 @@ const item = {
 
 function DemoModal({ onClose }: { onClose: () => void }) {
   const reduce = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <motion.div
-      className="fixed inset-0 z-[300] grid place-items-center bg-deep/70 p-4 backdrop-blur-md"
+      className="fixed inset-0 z-[300] grid place-items-center bg-black/80 p-4 backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -57,29 +59,39 @@ function DemoModal({ onClose }: { onClose: () => void }) {
       aria-label="Student story video"
     >
       <motion.div
-        initial={reduce ? {} : { scale: 0.8, y: 40, opacity: 0 }}
+        initial={reduce ? {} : { scale: 0.85, y: 40, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
+        exit={{ scale: 0.85, opacity: 0 }}
         transition={{ type: "spring", stiffness: 260, damping: 24 }}
-        className="w-full max-w-2xl overflow-hidden rounded-card bg-white shadow-lift"
+        className="w-full max-w-3xl overflow-hidden rounded-2xl bg-black shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between bg-primary px-5 py-4 text-white">
-          <p className="font-poppins font-bold">Student Story (Sample video placeholder)</p>
-          <button onClick={onClose} aria-label="Close video">
-            <X />
+        {/* Header */}
+        <div className="flex items-center justify-between bg-primary px-5 py-3 text-white">
+          <p className="font-poppins font-semibold text-sm">🎬 Arjun's BrightPath Story</p>
+          <button
+            onClick={onClose}
+            aria-label="Close video"
+            className="rounded-full p-1 hover:bg-white/20 transition-colors"
+          >
+            <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="aspect-video w-full bg-deep">
-          <iframe
+        {/* Video Player */}
+        <div className="aspect-video w-full bg-black">
+          <video
+            ref={videoRef}
             className="h-full w-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
-            title="Sample student story video"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+            src="/brightpath-academy-arjun-s-story-rev35-1920x1080-30fps-watermarked.mp4"
+            controls
+            autoPlay
+            playsInline
+            controlsList="nodownload"
+            title="Arjun's BrightPath Academy Story"
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <p className="px-5 py-4 text-sm text-muted">Sample embed for illustration only — replace with your real testimonial video.</p>
       </motion.div>
     </motion.div>
   );
